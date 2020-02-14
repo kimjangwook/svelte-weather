@@ -1,5 +1,7 @@
 # Svelte Weather App
 
+![Running example](./assets/running.gif)
+
 ## Prerequisites
 
 Get API key from [OpenWeatherMap](https://openweathermap.org/).
