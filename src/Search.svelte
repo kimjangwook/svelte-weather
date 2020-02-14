@@ -32,8 +32,6 @@
 
 <style type="text/scss">
     .search-form {
-        width: 80%;
-        margin-left: 10%;
         padding: 1rem;
         input[type="text"] {
             width: 50%;
