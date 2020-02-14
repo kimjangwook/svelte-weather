@@ -13,3 +13,5 @@ $ node -v
 $ npm install
 $ npm run dev
 ```
+
+Access to `http://localhost:5000` using a browser.
