@@ -1,5 +1,9 @@
 # Svelte Weather App
 
+## Prerequisites
+
+Get API key from [OpenWeatherMap](https://openweathermap.org/).
+
 ## Environment
 
 ```sh
@@ -8,6 +12,8 @@ $ node -v
 ```
 
 ## To run
+
+Modify key value in the `/src/key.js` file.
 
 ```
 $ npm install
