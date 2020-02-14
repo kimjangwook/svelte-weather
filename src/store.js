@@ -6,11 +6,8 @@ export const weatherList = (() => {
     return {
         subscribe,
         add: (weatherInfo) => update(wList => [...wList, weatherInfo]),
-        remove: (cityName) => update(wList => {
-            const index = wList.findIndex(item => item.name === cityName);
-            if (index > -1) {
-                wList.splice(index, 1);
-            }
+        remove: (index) => update(wList => {
+            wList.splice(index, 1);
             return wList;
         }),
     }
