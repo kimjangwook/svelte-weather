@@ -1,4 +1,4 @@
-import replace from 'rollup-plugin-replace';
+import replace from '@rollup/plugin-replace';
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
