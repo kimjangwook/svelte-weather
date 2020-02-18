@@ -15,11 +15,9 @@ $ node -v
 
 ## To run
 
-Modify key value in the `/src/key.js` file.
-
 ```
 $ npm install
-$ npm run dev
+$ API_KEY=<YOUR_API_KEY> npm run dev
 ```
 
 Access to `http://localhost:5000` using a browser.
