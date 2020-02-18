@@ -1,3 +1,4 @@
+import replace from 'rollup-plugin-replace';
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
@@ -27,7 +28,11 @@ export default {
 			preprocess: {
 				style: sass({}, { name: 'scss' }),
 			},
-		}),
+        }),
+
+        replace({
+          'API_KEY': process.env.API_KEY
+        }),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
