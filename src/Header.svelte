@@ -1,5 +1,6 @@
 <header>
     <a href="/">Svelte Weather</a>
+    <a href="/test">Test</a>
 </header>
 
 <style type="text/scss">
