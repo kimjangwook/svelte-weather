@@ -1,2 +1,1219 @@
-var app=function(){"use strict";function t(){}function e(t){return t()}function n(){return Object.create(null)}function r(t){t.forEach(e)}function o(t){return"function"==typeof t}function c(t,e){return t!=t?e==e:t!==e||t&&"object"==typeof t||"function"==typeof t}function u(e,n,r){e.$$.on_destroy.push(function(e,...n){if(null==e)return t;const r=e.subscribe(...n);return r.unsubscribe?()=>r.unsubscribe():r}(n,r))}function i(t,e){t.appendChild(e)}function s(t,e,n){t.insertBefore(e,n||null)}function l(t){t.parentNode.removeChild(t)}function a(t){return document.createElement(t)}function f(t){return document.createTextNode(t)}function d(){return f(" ")}function p(t,e,n,r){return t.addEventListener(e,n,r),()=>t.removeEventListener(e,n,r)}function h(t,e,n){null==n?t.removeAttribute(e):t.getAttribute(e)!==n&&t.setAttribute(e,n)}function m(t,e){e=""+e,t.data!==e&&(t.data=e)}function g(t,e){(null!=e||t.value)&&(t.value=e)}let $;function y(t){$=t}const b=[],v=[],w=[],x=[],_=Promise.resolve();let q=!1;function k(t){w.push(t)}let C=!1;const E=new Set;function A(){if(!C){C=!0;do{for(let t=0;t<b.length;t+=1){const e=b[t];y(e),N(e.$$)}for(b.length=0;v.length;)v.pop()();for(let t=0;t<w.length;t+=1){const e=w[t];E.has(e)||(E.add(e),e())}w.length=0}while(b.length);for(;x.length;)x.pop()();q=!1,C=!1,E.clear()}}function N(t){if(null!==t.fragment){t.update(),r(t.before_update);const e=t.dirty;t.dirty=[-1],t.fragment&&t.fragment.p(t.ctx,e),t.after_update.forEach(k)}}const z=new Set;let T;function D(t,e){t&&t.i&&(z.delete(t),t.i(e))}function j(t,e,n,r){if(t&&t.o){if(z.has(t))return;z.add(t),T.c.push(()=>{z.delete(t),r&&(n&&t.d(1),r())}),t.o(e)}}function I(t){t&&t.c()}function L(t,n,c){const{fragment:u,on_mount:i,on_destroy:s,after_update:l}=t.$$;u&&u.m(n,c),k(()=>{const n=i.map(e).filter(o);s?s.push(...n):r(n),t.$$.on_mount=[]}),l.forEach(k)}function O(t,e){const n=t.$$;null!==n.fragment&&(r(n.on_destroy),n.fragment&&n.fragment.d(e),n.on_destroy=n.fragment=null,n.ctx=[])}function S(t,e){-1===t.$$.dirty[0]&&(b.push(t),q||(q=!0,_.then(A)),t.$$.dirty.fill(0)),t.$$.dirty[e/31|0]|=1<<e%31}function B(e,o,c,u,i,s,l=[-1]){const a=$;y(e);const f=o.props||{},d=e.$$={fragment:null,ctx:null,props:s,update:t,not_equal:i,bound:n(),on_mount:[],on_destroy:[],before_update:[],after_update:[],context:new Map(a?a.$$.context:[]),callbacks:n(),dirty:l};let p=!1;d.ctx=c?c(e,f,(t,n,...r)=>{const o=r.length?r[0]:n;return d.ctx&&i(d.ctx[t],d.ctx[t]=o)&&(d.bound[t]&&d.bound[t](o),p&&S(e,t)),n}):[],d.update(),p=!0,r(d.before_update),d.fragment=!!u&&u(d.ctx),o.target&&(o.hydrate?d.fragment&&d.fragment.l(function(t){return Array.from(t.childNodes)}(o.target)):d.fragment&&d.fragment.c(),o.intro&&D(e.$$.fragment),L(e,o.target,o.anchor),A()),y(a)}class M{$destroy(){O(this,1),this.$destroy=t}$on(t,e){const n=this.$$.callbacks[t]||(this.$$.callbacks[t]=[]);return n.push(e),()=>{const t=n.indexOf(e);-1!==t&&n.splice(t,1)}}$set(){}}function P(e){let n;return{c(){n=a("header"),n.innerHTML='<a href="/" class="svelte-oy0ofn">Svelte Weather</a> \n    <a href="/test" class="svelte-oy0ofn">Test</a>',h(n,"class","svelte-oy0ofn")},m(t,e){s(t,n,e)},p:t,i:t,o:t,d(t){t&&l(n)}}}class H extends M{constructor(t){super(),B(this,t,null,P,c,{})}}const R=[];const W=(()=>{const{subscribe:e,update:n}=function(e,n=t){let r;const o=[];function u(t){if(c(e,t)&&(e=t,r)){const t=!R.length;for(let t=0;t<o.length;t+=1){const n=o[t];n[1](),R.push(n,e)}if(t){for(let t=0;t<R.length;t+=2)R[t][0](R[t+1]);R.length=0}}}return{set:u,update:function(t){u(t(e))},subscribe:function(c,i=t){const s=[c,i];return o.push(s),1===o.length&&(r=n(u)||t),c(e),()=>{const t=o.indexOf(s);-1!==t&&o.splice(t,1),0===o.length&&(r(),r=null)}}}}([]);return{subscribe:e,add:t=>n(e=>[...e,t]),remove:t=>n(e=>(e.splice(t,1),e))}})();function F(e){let n,o,c,u,f,m,$,y;return{c(){n=a("div"),o=a("input"),c=d(),u=a("div"),f=a("input"),m=d(),$=a("button"),$.textContent="ADD",h(o,"type","text"),h(o,"placeholder","Input your API key."),h(o,"class","svelte-1ffqlz"),h(n,"class","api-key svelte-1ffqlz"),h(f,"type","text"),h(f,"placeholder","Enter City Name."),h(f,"class","svelte-1ffqlz"),h($,"type","button"),h($,"class","svelte-1ffqlz"),h(u,"class","search-form svelte-1ffqlz")},m(t,r){s(t,n,r),i(n,o),g(o,e[0]),s(t,c,r),s(t,u,r),i(u,f),g(f,e[1]),i(u,m),i(u,$),y=[p(o,"input",e[4]),p(f,"input",e[5]),p($,"click",e[2])]},p(t,[e]){1&e&&o.value!==t[0]&&g(o,t[0]),2&e&&f.value!==t[1]&&g(f,t[1])},i:t,o:t,d(t){t&&l(n),t&&l(c),t&&l(u),r(y)}}}function G(t,e,n){let r="",o="";function c(t){return"http://api.openweathermap.org/data/2.5/weather?units=metric&appid="+(r||"undefined")+"&q="+t}return[r,o,async function(){const t=await fetch(c(o));404===t.status?alert("Invalid City Name."):W.add(await t.json()),n(1,o="")},c,function(){r=this.value,n(0,r)},function(){o=this.value,n(1,o)}]}class J extends M{constructor(t){super(),B(this,t,G,F,c,{})}}function K(e){let n,o,c,u,f;return{c(){n=a("section"),o=a("button"),o.textContent="Remove",c=d(),u=a("button"),u.textContent="Cancel",h(o,"type","button"),h(u,"type","button")},m(t,r){s(t,n,r),i(n,o),i(n,c),i(n,u),f=[p(o,"click",e[6]),p(u,"click",e[5])]},p:t,d(t){t&&l(n),r(f)}}}function Q(e){let n,o,c,u,g,$,y,b,v,w,x,_,q,k,C,E,A,N,z=e[0].name+"",T=e[0].main.temp+"",D=e[0].main.humidity+"",j=e[1]&&K(e);return{c(){n=a("div"),o=a("section"),c=a("h4"),u=a("b"),g=f(z),$=d(),y=a("img"),x=d(),_=a("div"),q=f(T),k=f("℃ / "),C=f(D),E=f("％"),A=d(),j&&j.c(),y.src!==(b=e[2])&&h(y,"src",b),h(y,"alt",v=e[0].weather[0].description),h(y,"title",w=e[0].weather[0].main),h(_,"class","container svelte-5119oq"),h(n,"class","card svelte-5119oq")},m(t,r){s(t,n,r),i(n,o),i(o,c),i(c,u),i(u,g),i(o,$),i(o,y),i(o,x),i(o,_),i(_,q),i(_,k),i(_,C),i(_,E),i(n,A),j&&j.m(n,null),N=[p(o,"mousedown",e[3]),p(o,"mouseup",e[4])]},p(t,[e]){1&e&&z!==(z=t[0].name+"")&&m(g,z),1&e&&v!==(v=t[0].weather[0].description)&&h(y,"alt",v),1&e&&w!==(w=t[0].weather[0].main)&&h(y,"title",w),1&e&&T!==(T=t[0].main.temp+"")&&m(q,T),1&e&&D!==(D=t[0].main.humidity+"")&&m(C,D),t[1]?j?j.p(t,e):(j=K(t),j.c(),j.m(n,null)):j&&(j.d(1),j=null)},i:t,o:t,d(t){t&&l(n),j&&j.d(),r(N)}}}function U(t,e,n){let{weather:r}=e,{index:o}=e,c="http://openweathermap.org/img/w/"+r.weather[0].icon+".png",u=0,i=!1;function s(){u=0,n(1,i=!1)}return t.$set=t=>{"weather"in t&&n(0,r=t.weather),"index"in t&&n(7,o=t.index)},[r,i,c,function(){u=(new Date).getTime(),n(1,i=!1)},function(){(new Date).getTime()>=u+1500&&n(1,i=!0)},s,function(){W.remove(o),s()},o]}class V extends M{constructor(t){super(),B(this,t,U,Q,c,{weather:0,index:7})}}function X(t,e,n){const r=t.slice();return r[1]=e[n],r[3]=n,r}function Y(t){let e;const n=new V({props:{weather:t[1],index:t[3]}});return{c(){I(n.$$.fragment)},m(t,r){L(n,t,r),e=!0},p(t,e){const r={};1&e&&(r.weather=t[1]),n.$set(r)},i(t){e||(D(n.$$.fragment,t),e=!0)},o(t){j(n.$$.fragment,t),e=!1},d(t){O(n,t)}}}function Z(t){let e,n,o=t[0],c=[];for(let e=0;e<o.length;e+=1)c[e]=Y(X(t,o,e));const u=t=>j(c[t],1,1,()=>{c[t]=null});return{c(){for(let t=0;t<c.length;t+=1)c[t].c();e=f("")},m(t,r){for(let e=0;e<c.length;e+=1)c[e].m(t,r);s(t,e,r),n=!0},p(t,[n]){if(1&n){let i;for(o=t[0],i=0;i<o.length;i+=1){const r=X(t,o,i);c[i]?(c[i].p(r,n),D(c[i],1)):(c[i]=Y(r),c[i].c(),D(c[i],1),c[i].m(e.parentNode,e))}for(T={r:0,c:[],p:T},i=o.length;i<c.length;i+=1)u(i);T.r||r(T.c),T=T.p}},i(t){if(!n){for(let t=0;t<o.length;t+=1)D(c[t]);n=!0}},o(t){c=c.filter(Boolean);for(let t=0;t<c.length;t+=1)j(c[t]);n=!1},d(t){!function(t,e){for(let n=0;n<t.length;n+=1)t[n]&&t[n].d(e)}(c,t),t&&l(e)}}}function tt(t,e,n){let r;return u(t,W,t=>n(0,r=t)),[r]}class et extends M{constructor(t){super(),B(this,t,tt,Z,c,{})}}function nt(e){let n,r,o,c;const u=new H({}),f=new J({}),p=new et({});return{c(){I(u.$$.fragment),n=d(),r=a("main"),I(f.$$.fragment),o=d(),I(p.$$.fragment),h(r,"class","svelte-1qg915g")},m(t,e){L(u,t,e),s(t,n,e),s(t,r,e),L(f,r,null),i(r,o),L(p,r,null),c=!0},p:t,i(t){c||(D(u.$$.fragment,t),D(f.$$.fragment,t),D(p.$$.fragment,t),c=!0)},o(t){j(u.$$.fragment,t),j(f.$$.fragment,t),j(p.$$.fragment,t),c=!1},d(t){O(u,t),t&&l(n),t&&l(r),O(f),O(p)}}}return new class extends M{constructor(t){super(),B(this,t,null,nt,c,{})}}({target:document.body,props:{}})}();
+
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.head.appendChild(r) })(window.document);
+var app = (function () {
+    'use strict';
+
+    function noop() { }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    function validate_store(store, name) {
+        if (store != null && typeof store.subscribe !== 'function') {
+            throw new Error(`'${name}' is not a store with a 'subscribe' method`);
+        }
+    }
+    function subscribe(store, ...callbacks) {
+        if (store == null) {
+            return noop;
+        }
+        const unsub = store.subscribe(...callbacks);
+        return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
+    }
+    function component_subscribe(component, store, callback) {
+        component.$$.on_destroy.push(subscribe(store, callback));
+    }
+
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function empty() {
+        return text('');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_input_value(input, value) {
+        if (value != null || input.value) {
+            input.value = value;
+        }
+    }
+    function custom_event(type, detail) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, false, false, detail);
+        return e;
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    let flushing = false;
+    const seen_callbacks = new Set();
+    function flush() {
+        if (flushing)
+            return;
+        flushing = true;
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            for (let i = 0; i < dirty_components.length; i += 1) {
+                const component = dirty_components[i];
+                set_current_component(component);
+                update(component.$$);
+            }
+            dirty_components.length = 0;
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                    callback();
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+        flushing = false;
+        seen_callbacks.clear();
+    }
+    function update($$) {
+        if ($$.fragment !== null) {
+            $$.update();
+            run_all($$.before_update);
+            const dirty = $$.dirty;
+            $$.dirty = [-1];
+            $$.fragment && $$.fragment.p($$.ctx, dirty);
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+    const outroing = new Set();
+    let outros;
+    function group_outros() {
+        outros = {
+            r: 0,
+            c: [],
+            p: outros // parent group
+        };
+    }
+    function check_outros() {
+        if (!outros.r) {
+            run_all(outros.c);
+        }
+        outros = outros.p;
+    }
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, detach, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.c.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    if (detach)
+                        block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+    }
+    function create_component(block) {
+        block && block.c();
+    }
+    function mount_component(component, target, anchor) {
+        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        fragment && fragment.m(target, anchor);
+        // onMount happens before the initial afterUpdate
+        add_render_callback(() => {
+            const new_on_destroy = on_mount.map(run).filter(is_function);
+            if (on_destroy) {
+                on_destroy.push(...new_on_destroy);
+            }
+            else {
+                // Edge case - component was destroyed immediately,
+                // most likely as a result of a binding initialising
+                run_all(new_on_destroy);
+            }
+            component.$$.on_mount = [];
+        });
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        const $$ = component.$$;
+        if ($$.fragment !== null) {
+            run_all($$.on_destroy);
+            $$.fragment && $$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            $$.on_destroy = $$.fragment = null;
+            $$.ctx = [];
+        }
+    }
+    function make_dirty(component, i) {
+        if (component.$$.dirty[0] === -1) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty.fill(0);
+        }
+        component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+    }
+    function init(component, options, instance, create_fragment, not_equal, props, dirty = [-1]) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const prop_values = options.props || {};
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(parent_component ? parent_component.$$.context : []),
+            // everything else
+            callbacks: blank_object(),
+            dirty
+        };
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, prop_values, (i, ret, ...rest) => {
+                const value = rest.length ? rest[0] : ret;
+                if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
+                    if ($$.bound[i])
+                        $$.bound[i](value);
+                    if (ready)
+                        make_dirty(component, i);
+                }
+                return ret;
+            })
+            : [];
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        // `false` as a special case of no DOM component
+        $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+        if (options.target) {
+            if (options.hydrate) {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.l(children(options.target));
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set() {
+            // overridden by instance, if it has props
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.18.2' }, detail)));
+    }
+    function append_dev(target, node) {
+        dispatch_dev("SvelteDOMInsert", { target, node });
+        append(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev("SvelteDOMInsert", { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev("SvelteDOMRemove", { node });
+        detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ["capture"] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev("SvelteDOMAddEventListener", { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev("SvelteDOMRemoveEventListener", { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev("SvelteDOMRemoveAttribute", { node, attribute });
+        else
+            dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.data === data)
+            return;
+        dispatch_dev("SvelteDOMSetData", { node: text, data });
+        text.data = data;
+    }
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error(`'target' is a required option`);
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn(`Component was already destroyed`); // eslint-disable-line no-console
+            };
+        }
+    }
+
+    /* src\Header.svelte generated by Svelte v3.18.2 */
+
+    const file = "src\\Header.svelte";
+
+    function create_fragment(ctx) {
+    	let header;
+    	let a0;
+    	let t1;
+    	let a1;
+
+    	const block = {
+    		c: function create() {
+    			header = element("header");
+    			a0 = element("a");
+    			a0.textContent = "Svelte Weather";
+    			t1 = space();
+    			a1 = element("a");
+    			a1.textContent = "Test";
+    			attr_dev(a0, "href", "/");
+    			attr_dev(a0, "class", "svelte-oy0ofn");
+    			add_location(a0, file, 1, 4, 14);
+    			attr_dev(a1, "href", "/test");
+    			attr_dev(a1, "class", "svelte-oy0ofn");
+    			add_location(a1, file, 2, 4, 50);
+    			attr_dev(header, "class", "svelte-oy0ofn");
+    			add_location(header, file, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, header, anchor);
+    			append_dev(header, a0);
+    			append_dev(header, t1);
+    			append_dev(header, a1);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(header);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    class Header extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, null, create_fragment, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Header",
+    			options,
+    			id: create_fragment.name
+    		});
+    	}
+    }
+
+    const key = 'undefined';
+
+    const subscriber_queue = [];
+    /**
+     * Create a `Writable` store that allows both updating and reading by subscription.
+     * @param {*=}value initial value
+     * @param {StartStopNotifier=}start start and stop notifications for subscriptions
+     */
+    function writable(value, start = noop) {
+        let stop;
+        const subscribers = [];
+        function set(new_value) {
+            if (safe_not_equal(value, new_value)) {
+                value = new_value;
+                if (stop) { // store is ready
+                    const run_queue = !subscriber_queue.length;
+                    for (let i = 0; i < subscribers.length; i += 1) {
+                        const s = subscribers[i];
+                        s[1]();
+                        subscriber_queue.push(s, value);
+                    }
+                    if (run_queue) {
+                        for (let i = 0; i < subscriber_queue.length; i += 2) {
+                            subscriber_queue[i][0](subscriber_queue[i + 1]);
+                        }
+                        subscriber_queue.length = 0;
+                    }
+                }
+            }
+        }
+        function update(fn) {
+            set(fn(value));
+        }
+        function subscribe(run, invalidate = noop) {
+            const subscriber = [run, invalidate];
+            subscribers.push(subscriber);
+            if (subscribers.length === 1) {
+                stop = start(set) || noop;
+            }
+            run(value);
+            return () => {
+                const index = subscribers.indexOf(subscriber);
+                if (index !== -1) {
+                    subscribers.splice(index, 1);
+                }
+                if (subscribers.length === 0) {
+                    stop();
+                    stop = null;
+                }
+            };
+        }
+        return { set, update, subscribe };
+    }
+
+    const weatherList = (() => {
+        const { subscribe, update } = writable([]);
+
+        return {
+            subscribe,
+            add: (weatherInfo) => update(wList => [...wList, weatherInfo]),
+            remove: (index) => update(wList => {
+                wList.splice(index, 1);
+                return wList;
+            }),
+        }
+    })();
+
+    /* src\Search.svelte generated by Svelte v3.18.2 */
+    const file$1 = "src\\Search.svelte";
+
+    function create_fragment$1(ctx) {
+    	let div0;
+    	let input0;
+    	let t0;
+    	let div1;
+    	let input1;
+    	let t1;
+    	let button;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			div0 = element("div");
+    			input0 = element("input");
+    			t0 = space();
+    			div1 = element("div");
+    			input1 = element("input");
+    			t1 = space();
+    			button = element("button");
+    			button.textContent = "ADD";
+    			attr_dev(input0, "type", "text");
+    			attr_dev(input0, "placeholder", "Input your API key.");
+    			attr_dev(input0, "class", "svelte-1ffqlz");
+    			add_location(input0, file$1, 25, 4, 682);
+    			attr_dev(div0, "class", "api-key svelte-1ffqlz");
+    			add_location(div0, file$1, 24, 0, 655);
+    			attr_dev(input1, "type", "text");
+    			attr_dev(input1, "placeholder", "Enter City Name.");
+    			attr_dev(input1, "class", "svelte-1ffqlz");
+    			add_location(input1, file$1, 29, 4, 804);
+    			attr_dev(button, "type", "button");
+    			attr_dev(button, "class", "svelte-1ffqlz");
+    			add_location(button, file$1, 33, 4, 913);
+    			attr_dev(div1, "class", "search-form svelte-1ffqlz");
+    			add_location(div1, file$1, 28, 0, 773);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div0, anchor);
+    			append_dev(div0, input0);
+    			set_input_value(input0, /*customApiKey*/ ctx[0]);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, input1);
+    			set_input_value(input1, /*cityName*/ ctx[1]);
+    			append_dev(div1, t1);
+    			append_dev(div1, button);
+
+    			dispose = [
+    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[4]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[5]),
+    				listen_dev(button, "click", /*addWeatherInfo*/ ctx[2], false, false, false)
+    			];
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*customApiKey*/ 1 && input0.value !== /*customApiKey*/ ctx[0]) {
+    				set_input_value(input0, /*customApiKey*/ ctx[0]);
+    			}
+
+    			if (dirty & /*cityName*/ 2 && input1.value !== /*cityName*/ ctx[1]) {
+    				set_input_value(input1, /*cityName*/ ctx[1]);
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(div1);
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$1.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let customApiKey = "";
+    	let cityName = "";
+
+    	function getFetchUrl(cityName) {
+    		console.log("https");
+    		return "https://api.openweathermap.org/data/2.5/weather?units=metric&appid=" + (customApiKey || key) + "&q=" + cityName;
+    	}
+
+    	async function addWeatherInfo() {
+    		const res = await fetch(getFetchUrl(cityName));
+
+    		if (res.status === 404) {
+    			alert("Invalid City Name.");
+    		} else {
+    			weatherList.add(await res.json());
+    		}
+
+    		$$invalidate(1, cityName = "");
+    	}
+
+    	function input0_input_handler() {
+    		customApiKey = this.value;
+    		$$invalidate(0, customApiKey);
+    	}
+
+    	function input1_input_handler() {
+    		cityName = this.value;
+    		$$invalidate(1, cityName);
+    	}
+
+    	$$self.$capture_state = () => {
+    		return {};
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ("customApiKey" in $$props) $$invalidate(0, customApiKey = $$props.customApiKey);
+    		if ("cityName" in $$props) $$invalidate(1, cityName = $$props.cityName);
+    	};
+
+    	return [
+    		customApiKey,
+    		cityName,
+    		addWeatherInfo,
+    		getFetchUrl,
+    		input0_input_handler,
+    		input1_input_handler
+    	];
+    }
+
+    class Search extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment$1, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Search",
+    			options,
+    			id: create_fragment$1.name
+    		});
+    	}
+    }
+
+    /* src\WeatherCard.svelte generated by Svelte v3.18.2 */
+    const file$2 = "src\\WeatherCard.svelte";
+
+    // (38:4) {#if showDeleteSection}
+    function create_if_block(ctx) {
+    	let section;
+    	let button0;
+    	let t1;
+    	let button1;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			section = element("section");
+    			button0 = element("button");
+    			button0.textContent = "Remove";
+    			t1 = space();
+    			button1 = element("button");
+    			button1.textContent = "Cancel";
+    			attr_dev(button0, "type", "button");
+    			add_location(button0, file$2, 39, 12, 1122);
+    			attr_dev(button1, "type", "button");
+    			add_location(button1, file$2, 40, 12, 1191);
+    			add_location(section, file$2, 38, 8, 1099);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, section, anchor);
+    			append_dev(section, button0);
+    			append_dev(section, t1);
+    			append_dev(section, button1);
+
+    			dispose = [
+    				listen_dev(button0, "click", /*remove*/ ctx[6], false, false, false),
+    				listen_dev(button1, "click", /*closeModal*/ ctx[5], false, false, false)
+    			];
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(section);
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(38:4) {#if showDeleteSection}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$2(ctx) {
+    	let div1;
+    	let section;
+    	let h4;
+    	let b;
+    	let t0_value = /*weather*/ ctx[0].name + "";
+    	let t0;
+    	let t1;
+    	let img;
+    	let img_src_value;
+    	let img_alt_value;
+    	let img_title_value;
+    	let t2;
+    	let div0;
+    	let t3_value = /*weather*/ ctx[0].main.temp + "";
+    	let t3;
+    	let t4;
+    	let t5_value = /*weather*/ ctx[0].main.humidity + "";
+    	let t5;
+    	let t6;
+    	let t7;
+    	let dispose;
+    	let if_block = /*showDeleteSection*/ ctx[1] && create_if_block(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			section = element("section");
+    			h4 = element("h4");
+    			b = element("b");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			img = element("img");
+    			t2 = space();
+    			div0 = element("div");
+    			t3 = text(t3_value);
+    			t4 = text("℃ / ");
+    			t5 = text(t5_value);
+    			t6 = text("％");
+    			t7 = space();
+    			if (if_block) if_block.c();
+    			add_location(b, file$2, 31, 12, 818);
+    			add_location(h4, file$2, 31, 8, 814);
+    			if (img.src !== (img_src_value = /*src*/ ctx[2])) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", img_alt_value = /*weather*/ ctx[0].weather[0].description);
+    			attr_dev(img, "title", img_title_value = /*weather*/ ctx[0].weather[0].main);
+    			add_location(img, file$2, 32, 8, 854);
+    			attr_dev(div0, "class", "container svelte-5119oq");
+    			add_location(div0, file$2, 33, 8, 944);
+    			add_location(section, file$2, 30, 4, 752);
+    			attr_dev(div1, "class", "card svelte-5119oq");
+    			add_location(div1, file$2, 29, 0, 728);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, section);
+    			append_dev(section, h4);
+    			append_dev(h4, b);
+    			append_dev(b, t0);
+    			append_dev(section, t1);
+    			append_dev(section, img);
+    			append_dev(section, t2);
+    			append_dev(section, div0);
+    			append_dev(div0, t3);
+    			append_dev(div0, t4);
+    			append_dev(div0, t5);
+    			append_dev(div0, t6);
+    			append_dev(div1, t7);
+    			if (if_block) if_block.m(div1, null);
+
+    			dispose = [
+    				listen_dev(section, "mousedown", /*init*/ ctx[3], false, false, false),
+    				listen_dev(section, "mouseup", /*openModal*/ ctx[4], false, false, false)
+    			];
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*weather*/ 1 && t0_value !== (t0_value = /*weather*/ ctx[0].name + "")) set_data_dev(t0, t0_value);
+
+    			if (dirty & /*weather*/ 1 && img_alt_value !== (img_alt_value = /*weather*/ ctx[0].weather[0].description)) {
+    				attr_dev(img, "alt", img_alt_value);
+    			}
+
+    			if (dirty & /*weather*/ 1 && img_title_value !== (img_title_value = /*weather*/ ctx[0].weather[0].main)) {
+    				attr_dev(img, "title", img_title_value);
+    			}
+
+    			if (dirty & /*weather*/ 1 && t3_value !== (t3_value = /*weather*/ ctx[0].main.temp + "")) set_data_dev(t3, t3_value);
+    			if (dirty & /*weather*/ 1 && t5_value !== (t5_value = /*weather*/ ctx[0].main.humidity + "")) set_data_dev(t5, t5_value);
+
+    			if (/*showDeleteSection*/ ctx[1]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block(ctx);
+    					if_block.c();
+    					if_block.m(div1, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div1);
+    			if (if_block) if_block.d();
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$2.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	let { weather } = $$props;
+    	let { index } = $$props;
+    	let src = "http://openweathermap.org/img/w/" + weather.weather[0].icon + ".png";
+    	let duration = 1.5 * 1000;
+    	let start = 0;
+    	let showDeleteSection = false;
+
+    	function init() {
+    		start = new Date().getTime();
+    		$$invalidate(1, showDeleteSection = false);
+    	}
+
+    	function openModal() {
+    		if (new Date().getTime() >= start + duration) {
+    			$$invalidate(1, showDeleteSection = true);
+    		}
+    	}
+
+    	function closeModal() {
+    		start = 0;
+    		$$invalidate(1, showDeleteSection = false);
+    	}
+
+    	function remove() {
+    		weatherList.remove(index);
+    		closeModal();
+    	}
+
+    	const writable_props = ["weather", "index"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<WeatherCard> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ("weather" in $$props) $$invalidate(0, weather = $$props.weather);
+    		if ("index" in $$props) $$invalidate(7, index = $$props.index);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return {
+    			weather,
+    			index,
+    			src,
+    			duration,
+    			start,
+    			showDeleteSection
+    		};
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ("weather" in $$props) $$invalidate(0, weather = $$props.weather);
+    		if ("index" in $$props) $$invalidate(7, index = $$props.index);
+    		if ("src" in $$props) $$invalidate(2, src = $$props.src);
+    		if ("duration" in $$props) duration = $$props.duration;
+    		if ("start" in $$props) start = $$props.start;
+    		if ("showDeleteSection" in $$props) $$invalidate(1, showDeleteSection = $$props.showDeleteSection);
+    	};
+
+    	return [weather, showDeleteSection, src, init, openModal, closeModal, remove, index];
+    }
+
+    class WeatherCard extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$1, create_fragment$2, safe_not_equal, { weather: 0, index: 7 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "WeatherCard",
+    			options,
+    			id: create_fragment$2.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*weather*/ ctx[0] === undefined && !("weather" in props)) {
+    			console.warn("<WeatherCard> was created without expected prop 'weather'");
+    		}
+
+    		if (/*index*/ ctx[7] === undefined && !("index" in props)) {
+    			console.warn("<WeatherCard> was created without expected prop 'index'");
+    		}
+    	}
+
+    	get weather() {
+    		throw new Error("<WeatherCard>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set weather(value) {
+    		throw new Error("<WeatherCard>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get index() {
+    		throw new Error("<WeatherCard>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set index(value) {
+    		throw new Error("<WeatherCard>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Board.svelte generated by Svelte v3.18.2 */
+
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[1] = list[i];
+    	child_ctx[3] = i;
+    	return child_ctx;
+    }
+
+    // (7:0) {#each $weatherList as weather, index}
+    function create_each_block(ctx) {
+    	let current;
+
+    	const weathercard = new WeatherCard({
+    			props: {
+    				weather: /*weather*/ ctx[1],
+    				index: /*index*/ ctx[3]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(weathercard.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(weathercard, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const weathercard_changes = {};
+    			if (dirty & /*$weatherList*/ 1) weathercard_changes.weather = /*weather*/ ctx[1];
+    			weathercard.$set(weathercard_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(weathercard.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(weathercard.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(weathercard, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block.name,
+    		type: "each",
+    		source: "(7:0) {#each $weatherList as weather, index}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$3(ctx) {
+    	let each_1_anchor;
+    	let current;
+    	let each_value = /*$weatherList*/ ctx[0];
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*$weatherList*/ 1) {
+    				each_value = /*$weatherList*/ ctx[0];
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$3.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$2($$self, $$props, $$invalidate) {
+    	let $weatherList;
+    	validate_store(weatherList, "weatherList");
+    	component_subscribe($$self, weatherList, $$value => $$invalidate(0, $weatherList = $$value));
+
+    	$$self.$capture_state = () => {
+    		return {};
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ("$weatherList" in $$props) weatherList.set($weatherList = $$props.$weatherList);
+    	};
+
+    	return [$weatherList];
+    }
+
+    class Board extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$2, create_fragment$3, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Board",
+    			options,
+    			id: create_fragment$3.name
+    		});
+    	}
+    }
+
+    /* src\App.svelte generated by Svelte v3.18.2 */
+    const file$3 = "src\\App.svelte";
+
+    function create_fragment$4(ctx) {
+    	let t0;
+    	let main;
+    	let t1;
+    	let current;
+    	const header = new Header({ $$inline: true });
+    	const search = new Search({ $$inline: true });
+    	const board = new Board({ $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			create_component(header.$$.fragment);
+    			t0 = space();
+    			main = element("main");
+    			create_component(search.$$.fragment);
+    			t1 = space();
+    			create_component(board.$$.fragment);
+    			attr_dev(main, "class", "svelte-1qg915g");
+    			add_location(main, file$3, 8, 0, 147);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(header, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, main, anchor);
+    			mount_component(search, main, null);
+    			append_dev(main, t1);
+    			mount_component(board, main, null);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(header.$$.fragment, local);
+    			transition_in(search.$$.fragment, local);
+    			transition_in(board.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(header.$$.fragment, local);
+    			transition_out(search.$$.fragment, local);
+    			transition_out(board.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(header, detaching);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(main);
+    			destroy_component(search);
+    			destroy_component(board);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$4.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, null, create_fragment$4, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "App",
+    			options,
+    			id: create_fragment$4.name
+    		});
+    	}
+    }
+
+    const app = new App({
+    	target: document.body,
+    	props: {
+    	}
+    });
+
+    return app;
+
+}());
 //# sourceMappingURL=weather.js.map

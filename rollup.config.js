@@ -14,7 +14,7 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/weather.js'
+		file: 'public/assets/js/weather.js'
 	},
 	plugins: [
 		svelte({
@@ -23,7 +23,7 @@ export default {
 			// we'll extract any component CSS out into
 			// a separate file - better for performance
 			css: css => {
-				css.write('public/weather.css');
+				css.write('public/assets/css/weather.css');
 			},
 			preprocess: {
 				style: sass({}, { name: 'scss' }),
