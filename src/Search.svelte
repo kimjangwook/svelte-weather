@@ -7,7 +7,6 @@
 
 
     function getFetchUrl(cityName) {
-        console.log('https');
         return 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=' + (customApiKey || key) + '&q=' + cityName ;
     }
 
