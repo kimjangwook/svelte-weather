@@ -1,5 +1,7 @@
 # Svelte Weather App
 
+> You can check this application from [My Svelte Weather App](https://www.jangwook.net/svelte-weather/public/)
+
 ![Running example](./assets/running.gif)
 
 ## Prerequisites
