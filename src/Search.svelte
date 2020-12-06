@@ -2,12 +2,11 @@
     import { key } from './key.js';
     import { weatherList } from './store.js';
 
-    let customApiKey = '';
     let cityName = '';
 
 
     function getFetchUrl(cityName) {
-        return 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=' + (customApiKey || key) + '&q=' + cityName ;
+        return 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=' + key + '&q=' + cityName ;
     }
 
     async function addWeatherInfo() {
@@ -21,10 +20,6 @@
     }
 </script>
 
-<div class="api-key">
-    <input type="text" placeholder="Input your API key." bind:value={customApiKey}>
-</div>
-
 <div class="search-form">
     <input type="text"
            placeholder="Enter City Name."
@@ -37,10 +32,8 @@
 
 
 <style type="text/scss">
-    .api-key {
-        padding: 1rem 0;
-    }
     .search-form {
+        margin-top: 20px !important;
         padding: 0;
         button {
             padding-left: 20px;
